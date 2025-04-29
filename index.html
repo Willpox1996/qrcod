@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>William & Karen 💕</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe0ec, #ffd3db);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2em;
+    }
+    header {
+      margin-top: 2em;
+    }
+    h1 {
+      font-size: 3em;
+      color: #c9184a;
+      margin-bottom: 0.2em;
+    }
+    h2 {
+      font-size: 1.5em;
+      color: #6a040f;
+      margin-bottom: 1em;
+    }
+    #timer {
+      font-size: 1.8em;
+      color: #333;
+      background-color: #fff0f5;
+      padding: 1em 2em;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
+    }
+    .love {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+      margin-top: 1em;
+    }
+    img {
+      width: 220px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 3em;
+      font-size: 1em;
+      color: #6a040f;
+      font-style: italic;
+    }
+    .hearts {
+      font-size: 2em;
+      animation: pulse 1.5s infinite;
+      margin-top: 1em;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .music {
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="music">
+    <iframe width="0" height="0" style="display: none;" src="https://www.youtube.com/embed/jBE_X3cMCyM?autoplay=1&loop=1&playlist=jBE_X3cMCyM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <header>
+    <h1>William Ferreira ❤ Karen Marques</h1>
+    <h2>Desde 17 de fevereiro de 2024, construindo uma linda história de amor!</h2>
+  </header>
+
+  <div id="timer"></div>
+
+  <div class="hearts">💘 💞 💖 💗 💓 💕</div>
+
+  <div class="love">
+    <img src="https://i.ibb.co/g27bxwr/foto1.jpg" alt="Foto 1">
+    <img src="https://i.ibb.co/cH2g6Kx/foto2.jpg" alt="Foto 2">
+    <img src="https://i.ibb.co/kV9ssbP3/foto3.jpg" alt="Foto 3">
+  </div>
+
+  <footer>
+    "O tempo voa quando estamos com quem amamos. Que cada segundo ao seu lado continue sendo mágico." 💑
+  </footer>
+
+  <script>
+    const startDate = new Date("2024-02-17T00:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      let diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      diff -= days * 1000 * 60 * 60 * 24;
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      diff -= hours * 1000 * 60 * 60;
+      const minutes = Math.floor(diff / (1000 * 60));
+      diff -= minutes * 1000 * 60;
+      const seconds = Math.floor(diff / 1000);
+
+      document.getElementById("timer").innerHTML =
+        `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos juntos 💖`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
